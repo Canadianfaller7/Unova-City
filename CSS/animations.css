@@ -1,0 +1,146 @@
+/* ======================================
+          Menu Section Animation
+====================================== */
+
+.menu {
+    color: rgb(219, 0, 0);
+    font: bold 12px/18px sans-serif;
+    text-align: center;
+    display: inline;
+    margin: 0% auto;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+/* these are the colors and other effects of
+ the home, gallery, and reservation when normal*/
+.menu li {
+    color: rgb(206, 206, 206);
+    background-color: rgb(100, 100, 100);
+    display: inline-block;
+    margin: 0% auto;
+    position: relative;
+    padding: 15px 4%;
+    border: 1px solid #9d9fa2;
+    box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.5);
+    border-radius: 6px;
+    /* background-color: #052136; */
+    cursor: pointer;
+    transition-property: background;
+    transition-duration: .4s;
+    transition-delay: 0s;
+    transition-timing-function: ease-in-out;
+}
+
+/* This changes the home, gallery, and reservations color when hovered over*/
+.menu li:hover {
+    color: rgb(0, 255, 213);
+    background-color: rgba(100, 65, 0, .3);
+}
+
+/* =======================================
+          Gallery Section animation
+======================================= */
+
+/* This gives a thin black border around the picture and text and
+makes the background yellow*/
+.photo {
+    position: relative;
+    line-height: 0;
+    margin-bottom: 2em;
+    overflow: hidden;
+    border-radius: 8px;
+    padding: 1px;
+    border: 1px solid #000000;
+    background-color: rgb(0, 255, 128);
+    box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.7);
+}
+
+/* This makes it so the block is not across the whole screen
+it narrows the container to a smaller look*/
+.pohto-container {
+    text-align: center;
+    margin: 15px auto;
+    width: 300px;
+    height: 169px;
+}
+
+/* This is now setting the image inside the container to 
+basically fit the border around the image*/
+.photo-container img {
+    /* putting max or min in front of width is saying don't
+    get any larger or smaller than the width value*/ 
+     max-width: 100%;
+     width: 300px;
+     height: 168px;
+ }
+
+ /* This now takes the text and moves it over the picture and makes it
+so the border of yellow and black are even smaller too. It also centers
+the text inside the picture and gives the picture a little darker
+look so the text pops out more*/
+.photo-overlay {
+    color: #fff;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    /* Justifying content is just justifying where you want the cotent.
+    Here we want it centered.*/
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, .5);
+}
+
+/* Takes the text Click to Enlarge and moves it closer to top of pic
+changes color to a more cream color. Adds a line height of 30px so 
+text isn't right near the top and spaces thing out a bit more. Moves the
+P text nearer to the bottom of the picture*/
+.white-head {
+    color: #dad2a4;
+    margin-top: 5%;
+    line-height: 30px;
+    padding-bottom: 20px;
+}
+
+/* ===================================================
+                Photo Overlay Transitions
+    ================================================ */
+
+/* This makes it so the text dissapears from the picture for now and
+also says when hover over picutre to show text within .1s*/
+.photo-overlay {
+    opacity: 0;
+    transition: opacity .5s;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+.photo-overlay p {
+    width: 100%;
+    height: 100%;
+    color: #fff;
+}
+
+/*makes it so when we hover over picture the text shows back up again*/
+.photo-overlay:hover {
+    opacity: 1;
+}
+
+/* This applies a transition effect to the photo and we are using the
+transform transition property here. The origin means the perspective
+the user will see is straight dead on when looking at it*/
+.photo img {
+    transition: transform .5s;
+    transform-origin: 50% 50%;
+}
+/* This will make the photo have that transform effect done now once
+user hovers over the image*/
+.photo:hover img {
+    transform: scale(1.1);
+}
